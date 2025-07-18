@@ -2,8 +2,8 @@
 
 A modern, responsive Web3 dashboard interface designed with a focus on user experience and visual appeal. This project demonstrates my skills in creating beautiful, functional interfaces for blockchain and cryptocurrency applications.
 
-![Web3 Dashboard Screenshot](/img/web3dashboard1.png)
-![Web3 Dashboard Screenshot](/img/web3dashboard2.png)
+![Web3 Dashboard Screenshot](public/img/web3dashboard1.png)
+![Web3 Dashboard Screenshot](public/img/web3dashboard2.png)
 
 
 ## 🎨 Design Highlights
