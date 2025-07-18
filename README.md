@@ -1,6 +1,6 @@
 # Web3 Dashboard - Design Showcase
 
-![Web3 Dashboard Demo](/img/web3dashboard.gif)
+![Web3 Dashboard Demo](/public/img/web3dashboard.gif)
 
 A modern, responsive Web3 dashboard interface designed with a focus on user experience and visual appeal. This project demonstrates my skills in creating beautiful, functional interfaces for blockchain and cryptocurrency applications.
 
@@ -21,9 +21,9 @@ A modern, responsive Web3 dashboard interface designed with a focus on user expe
 ## ✨ Key Features
 
 - **Interactive Data Visualization**
-- **Real-time Market Data** display
+- **Mock Market Data** display (demonstration only)
 - **Responsive Grid Layout**
-- **Custom Animations** including the signature butterfly loading indicator
+- **Playful Animations** featuring an interactive butterfly decoration
 - **Dark/Light Mode** ready (coming soon)
 - **Accessible** interface following WCAG guidelines
 
