@@ -2,11 +2,14 @@
   "name": "web3-dashboard",
   "version": "0.1.0",
   "private": true,
-   "scripts": {
+  "homepage": "https://ChainsQueenEth.github.io/web3dashboard",
+  "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "deploy": "npm run build && npm run export && gh-pages -d out"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
