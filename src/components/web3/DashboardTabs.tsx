@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Flame, TrendingUp } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 
 interface DashboardTabsProps {

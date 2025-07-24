@@ -3,24 +3,18 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Flame, TrendingUp, BarChart, Clock, Zap } from "lucide-react";
+import { Flame, BarChart, Clock, Zap } from "lucide-react";
 import { NFTGrid } from "@/components/web3/NFTGrid";
 import { StatsCard } from "@/components/web3/StatsCard";
 import { TokenTable } from "@/components/web3/TokenTable";
 import { AnimatedButterfly } from "@/components/web3/AnimatedButterfly";
 import { DashboardHeader } from "@/components/web3/DashboardHeader";
 
-interface Web3DashboardProps {}
 
-function Web3Dashboard({}: Web3DashboardProps) {
+function Web3Dashboard() {
   const [activeTab, setActiveTab] = useState("nfts");
   const [searchQuery, setSearchQuery] = useState("");
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
-  const handleRefresh = () => {
-    setIsRefreshing(true);
-    setTimeout(() => setIsRefreshing(false), 1000);
-  };
+  const [isRefreshing] = useState(false);
 
   const trendingNFTs = [
     {

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { SearchBar } from "@/components/web3/SearchBar";
-import { AnimatedButterfly } from "@/components/web3/AnimatedButterfly";
 
 interface DashboardHeaderProps {
   searchQuery: string;

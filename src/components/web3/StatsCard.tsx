@@ -6,7 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 
 export interface StatsCardProps {
   title: string;
@@ -33,7 +33,7 @@ export function StatsCard({
   index = 0,
   className = "",
 }: StatsCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
+ 
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
