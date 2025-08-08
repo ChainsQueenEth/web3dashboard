@@ -46,18 +46,14 @@ A modern, responsive Web3 dashboard interface designed with a focus on user expe
    git clone https://github.com/your-username/web3-dashboard.git
    ```
 
-2. Install dependencies
+2. Install dependencies (pnpm)
    ```bash
-   npm install
-   # or
-   yarn
+   pnpm install
    ```
 
 3. Run the development server
    ```bash
-   npm run dev
-   # or
-   yarn dev
+   pnpm dev
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
@@ -83,5 +79,35 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 💡 **Note**: This is a design showcase. For a production application, additional security measures and error handling would be implemented.
+
+
+## 📦 Deployment (GitHub Pages)
+
+This project is configured to deploy to GitHub Pages at:
+
+- URL: `https://ChainsQueenEth.github.io/web3dashboard`
+
+Key configuration files:
+
+- `next.config.js` sets `output: 'export'` and conditionally applies `basePath`/`assetPrefix` for production (`/web3dashboard`).
+- `.github/workflows/deploy.yml` builds with pnpm and publishes `./out` to the `gh-pages` branch.
+- `package.json` declares `"packageManager": "pnpm@10"`.
+
+Deploy from local (optional):
+
+```bash
+pnpm build
+# Static site will be generated in ./out
+```
+
+CI/CD via GitHub Actions:
+
+1) Push to `main` — workflow builds and publishes to `gh-pages`.
+2) In GitHub repo Settings → Pages, set Source to `gh-pages` branch, `/ (root)`.
+
+Troubleshooting:
+
+- If assets/links 404 on Pages, ensure the repo name matches `web3dashboard` and that the Pages URL uses the `/web3dashboard` subpath.
+- Confirm that `gh-pages` branch contains the exported files and a `.nojekyll` file (created by the workflow with `enable_jekyll: false`).
 
 

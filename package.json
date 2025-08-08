@@ -2,6 +2,7 @@
   "name": "web3-dashboard",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.12.4",
   "homepage": "https://ChainsQueenEth.github.io/web3dashboard",
   "scripts": {
     "dev": "next dev --turbopack",
