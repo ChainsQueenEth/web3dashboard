@@ -43,9 +43,9 @@ function SearchBarComponent({
   if (!isMounted) {
     // Render a simple input while hydrating to prevent layout shift
     return (
-      <div className={cn("relative max-w-2xl mt-6", className)}>
+      <div className={cn("relative max-w-2xl mt-6 rounded-2xl overflow-hidden", className)}>
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-lg border border-white/10 shadow-2xl shadow-blue-500/10 -z-10" />
-        <div className="relative">
+        <div className="relative rounded-2xl overflow-hidden">
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
             <Search className="h-5 w-5 text-gray-300" />
           </div>
@@ -63,7 +63,7 @@ function SearchBarComponent({
 
   return (
     <motion.div
-      className={cn("relative max-w-2xl group mt-6", className)}
+      className={cn("relative max-w-2xl group mt-6 rounded-2xl overflow-hidden", className)}
       initial={{ opacity: 0, y: 10 }}
       animate={{
         opacity: 1,
@@ -90,7 +90,7 @@ function SearchBarComponent({
       {/* Glassmorphism background with gradient border */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-lg border border-white/10 shadow-2xl shadow-blue-500/10 group-hover:shadow-blue-500/20 transition-all duration-500 -z-10" />
 
-      <div className="relative">
+      <div className="relative rounded-2xl overflow-hidden">
         <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
           <motion.div
             animate={searchIconAnimation.animate}
@@ -100,7 +100,7 @@ function SearchBarComponent({
             <Search className="h-5 w-5 text-gray-300 group-hover:text-blue-300 group-focus-within:text-blue-400 transition-all duration-300" />
           </motion.div>
         </div>
-        <div className="relative">
+        <div className="relative rounded-2xl overflow-hidden">
           <Input
             type="text"
             placeholder={placeholder}
