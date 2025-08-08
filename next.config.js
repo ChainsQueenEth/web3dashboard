@@ -12,6 +12,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/web3dashboard' : '',
+  },
   // Add any other Next.js config options here
 };
 

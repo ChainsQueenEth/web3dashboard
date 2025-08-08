@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { asset } from "@/lib/assets";
 
 interface AnimatedButterflyProps {
   className?: string;
@@ -59,7 +60,7 @@ export function AnimatedButterfly({
       }}
     >
       <Image
-        src="/img/butterfly1.png"
+        src={asset("/img/butterfly1.png")}
         alt="Decorative butterfly"
         width={120}
         height={120}

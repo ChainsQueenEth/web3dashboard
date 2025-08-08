@@ -3,6 +3,7 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { asset } from "@/lib/assets";
 
 interface NFT {
   id: number;
@@ -81,7 +82,7 @@ export function NFTGrid({ nfts, loading = false }: NFTGridProps) {
                 }}
               >
                 <Image
-                  src={nft.image}
+                  src={asset(nft.image)}
                   alt={nft.name}
                   width={400}
                   height={400}
