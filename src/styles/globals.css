@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+/* Global utility classes for common patterns */
+
+/* Glass panel with rounded edges and subtle border */
+.u-glass-2xl {
+  @apply rounded-2xl backdrop-blur-lg border border-white/10 bg-white/5;
+}
+
+/* Softer dark card surface variants */
+.u-card-soft {
+  @apply border-gray-700/50 bg-gray-800/50 backdrop-blur-sm;
+}
+.u-card-soft-strong {
+  @apply border-gray-700/50 bg-gray-800/80 backdrop-blur-sm;
+}
+
+/* Primary gradient surface and text */
+.u-gradient-surface {
+  @apply bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10;
+}
+.u-gradient-text-primary {
+  @apply bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+}
+
+/* Blue hover shadow accent */
+.u-hover-shadow-blue {
+  @apply shadow-2xl shadow-blue-500/10 transition-all duration-500 hover:shadow-blue-500/20;
+}
+
+/* Common focus ring for inputs */
+.u-focus-ring-blue {
+  @apply focus:ring-2 focus:ring-blue-400/30 focus:border-transparent;
+}
+
+/* Absolute gradient overlay typically behind content */
+.u-absolute-gradient-overlay {
+  @apply absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 -z-10;
+}
+
+/* Outline halo gradient used on headers and cards */
+.u-outline-gradient {
+  @apply absolute -inset-1 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10;
+}
+
+/* Muted translucent surface (no border) */
+.u-surface-muted {
+  @apply bg-gray-700/50 backdrop-blur-sm;
+}
+
+/* Border + blur only (no background), useful atop gradients */
+.u-blur-border {
+  @apply backdrop-blur-sm border border-white/10;
+}
+
+/* Blur only utility */
+.u-blur-sm {
+  @apply backdrop-blur-sm;
+}

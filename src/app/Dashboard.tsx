@@ -241,7 +241,7 @@ function Web3Dashboard() {
             className="w-full"
             onValueChange={setActiveTab}
           >
-            <TabsList className="grid w-full max-w-md grid-cols-2 mb-8 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50">
+            <TabsList className="grid w-full max-w-md grid-cols-2 mb-8 u-card-soft">
               <TabsTrigger
                 value="nfts"
                 className="text-gray-300 data-[state=active]:text-white data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500/10 data-[state=active]:to-purple-500/10 data-[state=active]:border-b-2 data-[state=active]:border-blue-500 rounded-t-lg px-6 py-3 transition-all duration-300 relative overflow-hidden group"

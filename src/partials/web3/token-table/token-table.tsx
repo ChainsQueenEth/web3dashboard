@@ -18,7 +18,7 @@ interface TokenTableProps {
 
 export function TokenTable({ tokens }: TokenTableProps) {
   return (
-    <Card className="border-gray-700/50 bg-gray-800/50 backdrop-blur-sm">
+    <Card className="u-card-soft">
       <div className="overflow-x-auto">
         <div className="min-w-[800px]">
           <CardHeader className="p-0 overflow-x-auto">
@@ -52,7 +52,7 @@ export function TokenTable({ tokens }: TokenTableProps) {
                     } group relative`}
                   >
                     <motion.span
-                      className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-sm sm:text-base font-medium whitespace-nowrap cursor-pointer"
+                      className="u-gradient-text-primary text-sm sm:text-base font-medium whitespace-nowrap cursor-pointer"
                       whileHover={{
                         x: 3,
                         transition: {
@@ -117,7 +117,7 @@ export function TokenTable({ tokens }: TokenTableProps) {
                         >
                           <div className="flex items-center">
                             <div className="relative z-10 flex-shrink-0">
-                              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm flex items-center justify-center">
+                              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 u-blur-sm flex items-center justify-center">
                                 <span className="text-lg font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
                                   {token.symbol[0]}
                                 </span>

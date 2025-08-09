@@ -101,7 +101,7 @@ export function StatsCard({
         }}
       >
         <Card
-          className={`bg-gradient-to-br ${color} backdrop-blur-sm border border-gray-700/50 overflow-hidden h-full transition-all duration-300 hover:shadow-lg ${className}`}
+          className={`bg-gradient-to-br ${color} u-blur-border overflow-hidden h-full transition-all duration-300 hover:shadow-lg ${className}`}
           style={{
             transformStyle: "preserve-3d",
             transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -143,7 +143,7 @@ export function StatsCard({
                 </motion.p>
               </div>
               <motion.div
-                className="p-2 rounded-lg bg-gray-700/50 backdrop-blur-sm"
+                className="p-2 rounded-lg u-surface-muted"
                 whileHover={{
                   rotate: 5,
                   scale: 1.1,
@@ -159,7 +159,7 @@ export function StatsCard({
               <Tooltip>
                 <TooltipTrigger className="w-full">
                   <motion.div
-                    className="h-2 bg-gray-700/50 rounded-full overflow-hidden"
+                    className="h-2 u-surface-muted rounded-full overflow-hidden"
                     initial={{ scaleX: 0.9, opacity: 0.8 }}
                     whileInView={{
                       scaleX: 1,
@@ -190,7 +190,7 @@ export function StatsCard({
                     />
                   </motion.div>
                 </TooltipTrigger>
-                <TooltipContent className="bg-gray-800 border border-gray-700/50 backdrop-blur-sm text-gray-200 text-sm p-2 rounded-lg shadow-lg">
+                <TooltipContent className="bg-gray-800 u-blur-border text-gray-200 text-sm p-2 rounded-lg shadow-lg">
                   <div className="flex flex-col space-y-1">
                     <span className="font-medium text-white">{title}</span>
                     <span className="text-gray-400 text-xs">{description}</span>

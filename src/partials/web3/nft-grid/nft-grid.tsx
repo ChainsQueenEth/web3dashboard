@@ -63,7 +63,7 @@ export function NFTGrid({ nfts, loading = false }: NFTGridProps) {
           }}
         >
           <Card
-            className="overflow-hidden border-gray-700/50 bg-gray-800/80 backdrop-blur-sm transition-all duration-300 group-hover:border-blue-500/50 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/20 h-full flex flex-col"
+            className="overflow-hidden transition-all duration-300 group-hover:border-blue-500/50 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/20 h-full flex flex-col u-card-soft-strong"
             style={{
               transformStyle: "preserve-3d",
               transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",

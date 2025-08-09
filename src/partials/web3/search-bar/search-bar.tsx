@@ -43,8 +43,8 @@ function SearchBarComponent({
   if (!isMounted) {
     // Render a simple input while hydrating to prevent layout shift
     return (
-      <div className={cn("relative max-w-2xl mt-6 rounded-2xl overflow-hidden", className)}>
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-lg border border-white/10 shadow-2xl shadow-blue-500/10 -z-10" />
+      <div className={cn("relative max-w-2xl mt-6 rounded-2xl overflow-hidden group", className)}>
+        <div className="u-absolute-gradient-overlay u-hover-shadow-blue" />
         <div className="relative rounded-2xl overflow-hidden">
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
             <Search className="h-5 w-5 text-gray-300" />
@@ -52,7 +52,7 @@ function SearchBarComponent({
           <Input
             type="text"
             placeholder={placeholder}
-            className="w-full pl-12 pr-12 py-6 bg-white/5 backdrop-blur-lg border border-white/10 text-white focus:ring-2 focus:ring-blue-400/30 focus:border-transparent transition-all duration-300 rounded-2xl"
+            className="w-full pl-12 pr-12 py-6 text-white transition-all duration-300 rounded-2xl u-glass-2xl u-focus-ring-blue"
             value={value}
             onChange={(e) => onChange(e.target.value)}
           />
@@ -88,7 +88,7 @@ function SearchBarComponent({
       }}
     >
       {/* Glassmorphism background with gradient border */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-lg border border-white/10 shadow-2xl shadow-blue-500/10 group-hover:shadow-blue-500/20 transition-all duration-500 -z-10" />
+      <div className="u-absolute-gradient-overlay u-hover-shadow-blue" />
 
       <div className="relative rounded-2xl overflow-hidden">
         <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
@@ -104,7 +104,7 @@ function SearchBarComponent({
           <Input
             type="text"
             placeholder={placeholder}
-            className="w-full pl-12 pr-12 py-6 bg-white/5 backdrop-blur-lg border border-white/10 text-white focus:ring-2 focus:ring-blue-400/30 focus:border-transparent transition-all duration-300 rounded-2xl peer"
+            className="w-full pl-12 pr-12 py-6 text-white transition-all duration-300 rounded-2xl peer u-glass-2xl u-focus-ring-blue"
             value={value}
             onChange={(e) => onChange(e.target.value)}
           />

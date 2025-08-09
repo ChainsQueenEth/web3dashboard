@@ -22,12 +22,9 @@ export function DashboardHeader({
         }}
       >
         <div className="relative group">
-          <motion.div
-            className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10"
-            aria-hidden="true"
-          />
+          <motion.div className="u-outline-gradient" aria-hidden="true" />
           <motion.h1
-            className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent inline-block relative"
+            className="text-3xl font-bold inline-block relative u-gradient-text-primary"
             initial={{ y: -50, opacity: 0, scale: 0.5 }}
             animate={{
               y: 0,
@@ -98,7 +95,7 @@ export function DashboardHeader({
         }}
         className="relative"
       >
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+        <div className="u-outline-gradient" />
         <SearchBar
           value={searchQuery}
           onChange={onSearchChange}
