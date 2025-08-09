@@ -13,9 +13,36 @@ export default defineConfig({
     jsxImportSource: 'react',
   },
   test: {
-    environment: 'jsdom', // Simulate the browser for React components
-    globals: true,        // Allows using describe/it/test without imports
-    include: ['src/**/*.test.{ts,tsx}'], // Looks for test files in src/
-    setupFiles: './vitest.setup.ts', // Global test setup (jest-dom, etc.)
+    // Fast, reliable React component testing in a browser-like env
+    environment: 'jsdom',
+    globals: true,
+    include: ['src/**/*.test.{ts,tsx}'],
+    setupFiles: './vitest.setup.ts',
+
+    // Performance & stability
+    isolate: true,
+    clearMocks: true,
+    restoreMocks: true,
+    pool: 'threads',
+    // Vitest v3: configure thread limits under poolOptions.threads
+    poolOptions: {
+      threads: {
+        maxThreads: process.env.CI ? 2 : undefined, // keep CI stable on small runners
+        minThreads: 1,
+      },
+    },
+
+    // Output & DX
+    reporters: process.env.CI ? ['dot'] : ['default'],
+    watch: !process.env.CI,
+    cache: { dir: './node_modules/.vitest' },
+
+    // Coverage is configured but disabled by default. Use `pnpm coverage`.
+    coverage: {
+      provider: 'v8',
+      reportsDirectory: './coverage',
+      reporter: ['text', 'html'],
+      enabled: false,
+    },
   },
 });
