@@ -43,16 +43,16 @@ function SearchBarComponent({
   if (!isMounted) {
     // Render a simple input while hydrating to prevent layout shift
     return (
-      <div className={cn("relative max-w-2xl mt-6 rounded-2xl overflow-hidden group", className)}>
+      <div className={cn("relative max-w-2xl mt-6 rounded-full overflow-hidden group", className)}>
         <div className="u-absolute-gradient-overlay u-hover-shadow-blue" />
-        <div className="relative rounded-2xl overflow-hidden">
+        <div className="relative rounded-full overflow-hidden">
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
             <Search className="h-5 w-5 text-gray-300" />
           </div>
           <Input
             type="text"
             placeholder={placeholder}
-            className="w-full pl-12 pr-12 py-6 text-white transition-all duration-300 rounded-2xl u-glass-2xl u-focus-ring-blue"
+            className="w-full pl-12 pr-12 py-6 text-white transition-all duration-300 rounded-full u-glass-2xl u-focus-ring-blue"
             value={value}
             onChange={(e) => onChange(e.target.value)}
           />
@@ -63,7 +63,7 @@ function SearchBarComponent({
 
   return (
     <motion.div
-      className={cn("relative max-w-2xl group mt-6 rounded-2xl overflow-hidden", className)}
+      className={cn("relative max-w-2xl group mt-6 rounded-full overflow-hidden", className)}
       initial={{ opacity: 0, y: 10 }}
       animate={{
         opacity: 1,
@@ -104,7 +104,7 @@ function SearchBarComponent({
           <Input
             type="text"
             placeholder={placeholder}
-            className="w-full pl-12 pr-12 py-6 text-white transition-all duration-300 rounded-2xl peer u-glass-2xl u-focus-ring-blue"
+            className="w-full pl-12 pr-12 py-6 text-white transition-all duration-300 rounded-full peer u-glass-2xl u-focus-ring-blue"
             value={value}
             onChange={(e) => onChange(e.target.value)}
           />

@@ -41,6 +41,72 @@ A modern, responsive Web3 dashboard interface designed with a focus on user expe
 - **Icons**: Lucide Icons
 - **Font**: Geist (optimized with next/font)
 
+## 🧭 Project Structure (Flowchart)
+
+```text
+web3dashboard/
+├─ app/                          # Next.js App Router entry
+│  ├─ page.tsx                   # Home (dashboard)
+│  └─ layout.tsx                 # Root layout (imports styles)
+│
+├─ src/
+│  ├─ styles/
+│  │  └─ globals.css             # Tailwind + global utility classes (u-*)
+│  ├─ components/
+│  │  └─ ui/                     # Reusable UI primitives (Tabs, Input, etc.)
+│  ├─ partials/                  # Feature-oriented UI blocks
+│  │  └─ web3/
+│  │     ├─ search-bar/
+│  │     │  ├─ search-bar.tsx    # SearchBar component
+│  │     │  └─ search-bar.test.tsx
+│  │     ├─ dashboard-header/
+│  │     │  └─ dashboard-header.tsx
+│  │     ├─ nft-grid/
+│  │     │  ├─ nft-grid.tsx      # NFT cards grid
+│  │     │  └─ nft-grid.test.tsx
+│  │     ├─ token-table/
+│  │     │  └─ token-table.tsx   # Token list table
+│  │     └─ stats-card/
+│  │        └─ stats-card.tsx    # KPI/stat cards
+│  ├─ lib/
+│  │  ├─ assets.ts               # Base-path aware asset helper
+│  │  └─ assets.test.ts          # Tests for asset() helper
+│  └─ ...
+│
+├─ public/                       # Static assets (images, icons)
+├─ vitest.config.ts              # Vitest + jsdom config
+├─ vitest.setup.ts               # Testing Library setup (jest-dom)
+└─ README.md
+```
+
+## 🧪 Testing
+
+Libraries:
+- **Vitest**: test runner and assertion library
+- **@testing-library/react**: DOM-oriented React testing
+- **@testing-library/user-event**: realistic user interactions
+- **jsdom**: browser-like environment for unit tests
+- **@testing-library/jest-dom**: custom DOM matchers (configured in `vitest.setup.ts`)
+
+What is covered:
+- `src/partials/web3/search-bar/search-bar.test.tsx`
+  - Renders placeholder
+  - Typing updates controlled value
+  - Clear button resets the field
+- `src/partials/web3/nft-grid/nft-grid.test.tsx`
+  - Renders NFT card name, collection and image alt text
+  - Shows loading skeletons when `loading` is true
+- `src/lib/assets.test.ts`
+  - `asset()` prefixes paths with `NEXT_PUBLIC_BASE_PATH` when set
+  - Leaves paths unchanged when base path is empty
+
+Run tests:
+```bash
+pnpm test           # watch mode
+pnpm test:ci        # run once
+pnpm coverage       # with coverage
+```
+
 ## 🚀 Getting Started
 
 1. Clone the repository
