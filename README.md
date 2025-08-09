@@ -1,5 +1,7 @@
 # Web3 Dashboard - Design Showcase
 
+[![CI](https://github.com/ChainsQueenEth/web3dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/ChainsQueenEth/web3dashboard/actions/workflows/ci.yml)
+
 A modern, responsive Web3 dashboard interface designed with a focus on user experience and visual appeal. This project demonstrates my skills in creating beautiful, functional interfaces for blockchain and cryptocurrency applications.
 
 ![Web3 Dashboard Screenshot](public/img/web3dashboard1.png)
