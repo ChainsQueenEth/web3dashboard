@@ -102,55 +102,25 @@ web3dashboard/
 graph TD
   A[app/] --> A1[layout.tsx]
   A --> A2[page.tsx]
-
   A2 --> P[partials/web3/]
   P --> PH[dashboard-header/]
   P --> PS[search-bar/]
   P --> PN[nft-grid/]
   P --> PT[token-table/]
   P --> PC[stats-card/]
-
-  subgraph UI[components/ui/]
-    UIT[Tabs]
-    UII[Input]
-    UITooltip[Tooltip]
-  end
-
-  subgraph Styles[styles/]
-    GS[globals.css]
-  end
-
-  subgraph Lib[lib/]
-    L1[assets.ts]
-  end
-
-  subgraph Public[public/]
-    IMG[img/*]
-  end
-
-  %% Page composes partials and UI primitives
-  A2 --> UIT
-  A2 --> UII
-  A2 --> UITooltip
-  PH --> GS
-  PS --> GS
-  PN --> GS
-  PT --> GS
-  PC --> GS
-  A1 --> GS
-  PN --> IMG
-  PT --> IMG
-  A2 --> L1
-
-  %% Tests
-  subgraph Tests[vitest]
-    T1[search-bar.test.tsx]
-    T2[nft-grid.test.tsx]
-    T3[assets.test.ts]
-  end
-  T1 --> PS
-  T2 --> PN
-  T3 --> L1
+  A2 --> UI[components/ui/]
+  UI --> UIT[Tabs]
+  UI --> UII[Input]
+  UI --> UITt[Tooltip]
+  A2 --> STY[styles/]
+  STY --> GS[globals.css]
+  A2 --> LIB[lib/]
+  LIB --> L1[assets.ts]
+  A2 --> PUB[public/]
+  PUB --> IMG[img/*]
+  T[tests] --> T1[search-bar.test.tsx]
+  T --> T2[nft-grid.test.tsx]
+  T --> T3[assets.test.ts]
 ```
 
 ## 🧪 Testing
