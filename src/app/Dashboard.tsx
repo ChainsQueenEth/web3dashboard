@@ -6,47 +6,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Flame, BarChart, Clock, Zap } from "lucide-react";
-import { NFTGrid } from "@/components/web3/NFTGrid";
-import { StatsCard } from "@/components/web3/StatsCard";
-import { TokenTable } from "@/components/web3/TokenTable";
-import { AnimatedButterfly } from "@/components/web3/AnimatedButterfly";
-import { DashboardHeader } from "@/components/web3/DashboardHeader";
+import { NFTGrid, StatsCard, TokenTable, AnimatedButterfly, DashboardHeader } from "@/partials/web3";
+import { getTrendingNfts } from "@/core/services";
 
 
 function Web3Dashboard() {
   const [activeTab, setActiveTab] = useState("nfts");
   const [searchQuery, setSearchQuery] = useState("");
   const [isRefreshing] = useState(false);
-
-  const trendingNFTs = [
-    {
-      id: 1,
-      name: "Mystic Whiskers #0420",
-      collection: "Crypto Cats Collective",
-      price: "1.89 ETH",
-      change: "+18.3%",
-      volume: "245 ETH",
-      image: "/img/cat.png",
-    },
-    {
-      id: 2,
-      name: "Arctic Fox #1337",
-      collection: "Wildlife Digital",
-      price: "2.45 ETH",
-      change: "+5.7%",
-      volume: "312 ETH",
-      image: "/img/fox.png",
-    },
-    {
-      id: 3,
-      name: "Nut Collector #8008",
-      collection: "Forest Friends",
-      price: "0.78 ETH",
-      change: "+32.6%",
-      volume: "198 ETH",
-      image: "/img/squirrel.png",
-    },
-  ] as const;
+  const trendingNFTs = getTrendingNfts();
 
   const trendingTokens = [
     {

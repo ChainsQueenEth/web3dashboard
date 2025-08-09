@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { SearchBar } from "@/components/web3/SearchBar";
+import { SearchBar } from "@/partials/web3";
+
 
 interface DashboardHeaderProps {
   searchQuery: string;

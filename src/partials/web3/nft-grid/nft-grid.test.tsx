@@ -1,11 +1,14 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import NFTGrid from './NFTGrid';
+import { NFTGrid } from '@/partials/web3';
 
 vi.mock('next/image', () => ({
   default: (props: any) => {
+    // Strip Next.js-specific props that aren't valid on img
+    // Reason: avoid React warnings in jsdom test environment
+    const { priority: _priority, loader: _loader, ...rest } = props ?? {};
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />;
+    return <img {...rest} />;
   },
 }));
 

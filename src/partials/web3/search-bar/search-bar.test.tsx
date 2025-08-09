@@ -1,14 +1,16 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import SearchBar from './SearchBar';
+import { SearchBar } from '@/partials/web3';
 import { useState } from 'react';
 
 // Mock next/image for jsdom environment if any image usage leaks in
 vi.mock('next/image', () => ({
   default: (props: any) => {
+    // Strip Next.js-specific props that aren't valid on img
+    const { priority: _priority, loader: _loader, ...rest } = props ?? {};
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />;
+    return <img {...rest} />;
   },
 }));
 
