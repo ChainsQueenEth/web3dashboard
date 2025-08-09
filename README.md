@@ -1,8 +1,8 @@
-# Web3 Dashboard - Design Showcase
+# Web3 Dashboard
 
 [![CI](https://github.com/ChainsQueenEth/web3dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/ChainsQueenEth/web3dashboard/actions/workflows/ci.yml)
 
-A modern, responsive Web3 dashboard interface designed with a focus on user experience and visual appeal. This project demonstrates my skills in creating beautiful, functional interfaces for blockchain and cryptocurrency applications.
+A modern, responsive Web3 dashboard interface focused on usability and visual clarity for blockchain and cryptocurrency contexts. It showcases a search-led homepage with KPI cards, an NFT grid, and a token table, built with a Tailwind utility system and animated micro‑interactions.
 
 ![Web3 Dashboard Screenshot](public/img/web3dashboard1.png)
 ![Web3 Dashboard Screenshot](public/img/web3dashboard2.png)
@@ -11,25 +11,27 @@ A modern, responsive Web3 dashboard interface designed with a focus on user expe
 ## 🎨 Design Highlights
 
 ### Visual Design
-- **Dark Theme UI** with carefully selected color gradients for depth and contrast
-- **Responsive Layout** that adapts seamlessly across all device sizes
-- **Micro-interactions** and smooth animations for enhanced user engagement
-- **Custom UI Components** with attention to detail and consistency
+- **Dark theme** surfaces with soft gradients and depth
+- **Responsive layout** across breakpoints
+- **Micro‑interactions** and smooth animations
+- **Custom UI components** with consistent styling
 
 ### Technical Implementation
-- Built with **Next.js 13+** and **TypeScript** for type safety
-- Styled with **Tailwind CSS** for rapid, maintainable styling
-- Animated with **Framer Motion** for buttery-smooth transitions
-- Component-based architecture for maximum reusability
+- **Next.js 15 (App Router)**
+- **React 19** + **TypeScript 5**
+- **Tailwind CSS 4** with global utility classes in `src/styles/globals.css`
+- **Framer Motion 12** for animations
+- **Radix UI** primitives (Tabs, Tooltip)
 
 ## ✨ Key Features
 
-- **Interactive Data Visualization**
-- **Mock Market Data** display (demonstration only)
-- **Responsive Grid Layout**
-- **Playful Animations** featuring an interactive butterfly decoration
-- **Dark/Light Mode** ready (coming soon)
-- **Accessible** interface following WCAG guidelines
+- **Search bar** with glass/gradient halo and focus ring
+- **KPI/Stats cards** with animated progress and icons
+- **NFT grid** with images, names, collections, and prices
+- **Token table** with symbols, prices, and change
+- **Tabs** to switch between “Trending NFTs” and “Top Tokens”
+- **Animated butterfly** decoration
+- **Accessible** UI patterns and keyboard‑focus styles
 
 ## 🛠️ Technical Stack
 
@@ -79,6 +81,78 @@ web3dashboard/
 └─ README.md
 ```
 
+## 🧑‍💻 Development Notes
+
+* **Abstraction goal**: Reduce repeated Tailwind strings and keep visuals consistent across components.
+* **Where utilities live**: `src/styles/globals.css` defines `u-*` classes consumed by components.
+* **When to use utilities**:
+  - Use `u-card-soft` / `u-card-soft-strong` for panel surfaces (cards, lists, containers).
+  - Use `u-glass-2xl` when an element needs a glass surface (e.g., inputs) rather than the whole container.
+  - Use `u-absolute-gradient-overlay` + `u-hover-shadow-blue` for gradient halos and stronger hover depth (e.g., SearchBar wrapper).
+  - Use `u-focus-ring-blue` for consistent focus visuals on inputs and interactive elements.
+  - Use `u-gradient-text-primary` for primary headings requiring gradient text.
+  - Use `u-blur-border` or `u-blur-sm` to add blur with or without borders in small UI affordances.
+* **Do not**: Nest custom utilities inside `@apply` rules within other custom utilities; Tailwind disallows that. Compose them in markup.
+* **Naming convention**: Prefer `u-*` for global utilities; keep files kebab-case (except Next.js reserved filenames).
+* **Testing**: Co-locate tests with components (`*.test.tsx`) to validate rendering and interactions with Testing Library.
+
+### Mermaid Flowchart (Basic Structure)
+
+```mermaid
+graph TD
+  A[app/] --> A1[layout.tsx]
+  A --> A2[page.tsx]
+
+  A2 --> P[partials/web3/]
+  P --> PH[dashboard-header/]
+  P --> PS[search-bar/]
+  P --> PN[nft-grid/]
+  P --> PT[token-table/]
+  P --> PC[stats-card/]
+
+  subgraph UI[components/ui/]
+    UIT[Tabs]
+    UII[Input]
+    UITooltip[Tooltip]
+  end
+
+  subgraph Styles[styles/]
+    GS[globals.css\n(u-* utilities)]
+  end
+
+  subgraph Lib[lib/]
+    L1[assets.ts]
+  end
+
+  subgraph Public[public/]
+    IMG[img/*]
+  end
+
+  %% Page composes partials and UI primitives
+  A2 --> UIT
+  A2 --> UII
+  A2 --> UITooltip
+  PH --> GS
+  PS --> GS
+  PN --> GS
+  PT --> GS
+  PC --> GS
+  A1 --> GS
+  PN --> IMG
+  PT --> IMG
+  A2 --> L1
+
+  %% Tests
+  subgraph Tests[vitest]
+    T1[search-bar.test.tsx]
+    T2[nft-grid.test.tsx]
+    T3[assets.test.ts]
+  end
+  T1 --> PS
+  T2 --> PN
+  T3 --> L1
+```
+
 ## 🧪 Testing
 
 Libraries:
@@ -107,11 +181,26 @@ pnpm test:ci        # run once
 pnpm coverage       # with coverage
 ```
 
+## 🧰 Global Tailwind Utilities
+
+Common, reusable styles are defined in `src/styles/globals.css` to reduce repeated utility strings and ensure consistency:
+
+- `u-glass-2xl` – rounded glass surface with blur and subtle border
+- `u-card-soft` / `u-card-soft-strong` – soft translucent panels
+- `u-gradient-text-primary` – gradient text for headings
+- `u-absolute-gradient-overlay` – absolute gradient halo overlay
+- `u-hover-shadow-blue` – blue hover shadow effect
+- `u-focus-ring-blue` – consistent blue focus ring
+- `u-outline-gradient` – outer gradient halo/outline
+- `u-surface-muted` – muted translucent surface
+- `u-blur-border` – blur with thin border
+- `u-blur-sm` – small blur only
+
 ## 🚀 Getting Started
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/your-username/web3-dashboard.git
+   git clone https://github.com/ChainsQueenEth/web3dashboard.git
    ```
 
 2. Install dependencies (pnpm)
@@ -146,7 +235,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-💡 **Note**: This is a design showcase. For a production application, additional security measures and error handling would be implemented.
+💡 **Note**: This is a design-oriented sample. For a production application, additional security measures, data fetching, and error handling would be implemented.
 
 
 ## 📦 Deployment (GitHub Pages)
