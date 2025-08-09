@@ -117,7 +117,7 @@ graph TD
   end
 
   subgraph Styles[styles/]
-    GS[globals.css\n(u-* utilities)]
+    GS[globals.css (u-* utilities)]
   end
 
   subgraph Lib[lib/]
